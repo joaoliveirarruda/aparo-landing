@@ -34,8 +34,8 @@
 
 /* Full-bleed campaign photography; navigation remains a separate fixed layer. */
 .hero { position: relative; height: 100svh; min-height: 680px; overflow: hidden; background: var(--color-ink); color: var(--color-paper); }
-.hero-photography { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr 1fr; }
-.hero-photography img { width: 100%; height: 100%; min-width: 0; object-fit: cover; }
+.hero-photography { position: absolute; inset: 0; display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: minmax(0, 1fr); }
+.hero-photography img { width: 100%; height: 100%; min-width: 0; min-height: 0; object-fit: cover; }
 .hero-photography img:first-child { object-position: 50% 45%; }
 .hero-photography img:last-child { object-position: 50% 48%; }
 .hero-shade { position: absolute; inset: 0; background: linear-gradient(90deg, rgb(18 14 10 / .32) 0%, rgb(18 14 10 / .24) 42%, transparent 76%), linear-gradient(180deg, rgb(18 14 10 / .6) 0%, rgb(18 14 10 / .12) 36%, rgb(18 14 10 / .25) 55%, rgb(18 14 10 / .72) 100%); }
@@ -52,12 +52,12 @@
   .hero-discover:hover { border-color: var(--color-paper); }
 }
 @media (max-width: 767px) {
-  .hero { min-height: 680px; }
-  .hero-photography { grid-template-columns: 1fr; }
-  .hero-photography img:first-child { display: none; }
-  .hero-photography img:last-child { object-position: 48% 40%; }
+  .hero { min-height: 760px; }
+  .hero-photography { grid-template-columns: 1fr; grid-template-rows: repeat(2, minmax(0, 1fr)); }
+  .hero-photography img:first-child { object-position: 50% 42%; }
+  .hero-photography img:last-child { object-position: 50% 48%; }
   .hero-content { padding: 210px 24px 32px; flex-direction: column; align-items: flex-start; justify-content: flex-end; gap: 28px; }
-  .hero-message h1 { font-size: clamp(34px, 9vw, 56px); }
+  .hero-message h1 { font-size: clamp(30px, 8.5vw, 52px); }
   .hero-eyebrow { font-size: 10px; margin-bottom: 16px; }
   .hero-description { font-size: 15px; margin-top: 16px; }
   .hero-main-cta { padding-inline: 20px; font-size: 14px; margin-top: 24px; }
@@ -193,7 +193,7 @@ section[id] { scroll-margin-top: 104px; }
 }
 @media (max-width: 767px) {
   .about-product, .product-section, .phone-story { padding: 64px 24px; }
-  .about-product, .phone-story, .context-grid { grid-template-columns: 1fr; gap: 36px; }
+  .about-product, .phone-story, .context-grid { grid-template-columns: minmax(0, 1fr); gap: 36px; }
   .about-label { gap: 24px; }
   .about-photo { aspect-ratio: 4 / 3; height: auto; max-height: 320px; object-fit: cover; }
   .about-copy { grid-template-columns: 1fr; gap: 20px; }
@@ -202,11 +202,11 @@ section[id] { scroll-margin-top: 104px; }
   .feature-heading { flex-direction: column; align-items: flex-start; margin: 30px 0; gap: 24px; }
   .product-grid { grid-template-columns: 1fr; gap: 40px; }
   .product-art { height: 330px; }
-  .art-career .art-object span { font-size: 50px; }
+  .art-career .art-object span { font-size: clamp(36px, 11vw, 50px); }
   .conversation-preview { transform: none; padding: 18px; }
   .context-note { padding-left: 22px; }
   .context-note > p { font-size: 22px; }
-  .closing-story { grid-template-columns: 1fr; }
+  .closing-story { grid-template-columns: minmax(0, 1fr); }
   .closing-story img { min-height: 0; height: 360px; }
   .closing-story > div { padding: 48px 24px; }
   .closing-story .action-button { max-width: 100%; padding-inline: 18px; font-size: 14px; }
