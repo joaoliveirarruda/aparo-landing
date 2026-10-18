@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.vercel/
+artifacts/
+.claude/
+.DS_Store
+.env
+.env.*
+!.env.example
+*.log

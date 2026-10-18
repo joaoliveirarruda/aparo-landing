@@ -1,0 +1,6 @@
+.git/
+artifacts/
+.claude/
+.DS_Store
+README.md
+assets/**/*.prompt.txt
